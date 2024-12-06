@@ -1,6 +1,15 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
+import { TextControlMeta } from "./types";
+import { Input } from "antd";
 
-export const TextControl = ({}) => {
-
-return <div>hello</div>
+export interface TextControlProps {
+    control: TextControlMeta;
+    onChange: (value: string) => void;
+    value: string
+}
+export const TextControl = (props: TextControlProps) => {
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        props.onChange && props.onChange(e.target.value)
+    }
+    return <Input {...props.control} value={props.value} onChange={onChange} />
 }
