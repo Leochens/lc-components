@@ -4,7 +4,7 @@ import { ConfigPanelProps } from "./types";
 import { ConfigPanelModel } from "./index.model";
 import LabelWrap from "./utils/LabelWrap";
 
-const ConfigPanel = (props: ConfigPanelProps) => {
+export const ConfigPanel = (props: ConfigPanelProps) => {
     const model = useMemo(() => {
         return new ConfigPanelModel(props);
     }, [props.data, props.meta])

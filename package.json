@@ -1,8 +1,8 @@
 {
-  "name": "my-story",
-  "private": true,
+  "name": "lc-pack",
   "version": "0.0.0",
   "type": "module",
+  "main": "./src/exports.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
