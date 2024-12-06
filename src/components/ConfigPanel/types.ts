@@ -27,7 +27,7 @@ export interface ConfigPanelOptions {
 /**
  * 配置面板的Change事件
  */
-export type ConfigPanelOnChange = (value: any) => void;
+export type ConfigPanelOnChange = (code:string, value: any) => void;
 
 
 export interface ConfigPanelProps {

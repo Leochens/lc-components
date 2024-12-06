@@ -8,4 +8,5 @@ export * from  './DateControl';
 export * from  './NumberControl';
 export * from  './TagControl';
 export * from  './TimeControl';
+export * from  './SliderControl';
 export * from  './CustomControl';

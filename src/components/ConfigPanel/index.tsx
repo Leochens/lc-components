@@ -9,8 +9,8 @@ const ConfigPanel = (props: ConfigPanelProps) => {
         return new ConfigPanelModel(props);
     }, [props.data, props.meta])
 
-    const onChange = (value: any) => {
-        props.onChange && props.onChange(value);
+    const onChange = (code: string, value: any) => {
+        props.onChange && props.onChange(code, value);
     }
     const getValue = (key: string) => {
         return props.data[key]
@@ -19,9 +19,9 @@ const ConfigPanel = (props: ConfigPanelProps) => {
         return model.getMetas().map(meta => {
             const { control, name, type, code } = meta;
             const Comp = Controls[`${type}Control`] as any;
-            if(!Comp) return null;
-            return <LabelWrap key={code} name={name}>
-                <Comp control={control} value={getValue(code)} onChange={onChange} />
+            if (!Comp) return null;
+            return <LabelWrap key={code} name={name} options={{ labelCol: 4, style: { margin: '10px' } }}>
+                <Comp control={control} value={getValue(code)} onChange={(value: any)=>onChange(code, value)} />
             </LabelWrap>
         })
     }
