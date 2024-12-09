@@ -10,3 +10,4 @@ export * from  './TagControl';
 export * from  './TimeControl';
 export * from  './SliderControl';
 export * from  './CustomControl';
+export * from  './GroupControl';

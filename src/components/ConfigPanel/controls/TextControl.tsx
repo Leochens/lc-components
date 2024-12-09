@@ -11,5 +11,5 @@ export const TextControl = (props: TextControlProps) => {
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChange && props.onChange(e.target.value)
     }
-    return <Input {...props.control} value={props.value} onChange={onChange} />
+    return <Input style={{width: '100%'}} {...props.control} value={props.value} onChange={onChange} />
 }

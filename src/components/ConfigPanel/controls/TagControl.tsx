@@ -8,7 +8,7 @@ export interface TagControlProps {
 }
 export const TagControl = (props: TagControlProps) => {
     const { tags } = props.control;
-    return <div>
+    return <div style={{width: '100%'}}>
         {tags.map(tag => <Tag key={tag.text} {...tag}>{tag.text}</Tag>)}
     </div>
 }

@@ -11,5 +11,5 @@ export const TimeControl = (props: TimeControlProps) => {
     const onChange: TimePickerProps['onChange'] = (e, str) => {
         props.onChange && props.onChange(str as string);
     }
-    return <TimePicker {...props.control} value={dayjs(props.value, 'HH:mm:ss')} onChange={onChange} />
+    return <TimePicker style={{width: '100%'}} {...props.control} value={dayjs(props.value, 'HH:mm:ss')} onChange={onChange} />
 }

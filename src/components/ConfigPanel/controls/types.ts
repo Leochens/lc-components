@@ -3,6 +3,8 @@ import { SliderBaseProps, SliderSingleProps } from "antd/es/slider";
 
 export interface ControlMeta {
 }
+export interface GroupControlMeta extends ControlMeta {
+}
 export interface CustomControlMeta extends ControlMeta {
 }
 export interface TextControlMeta extends ControlMeta, InputProps {
@@ -42,7 +44,8 @@ export enum ControlType {
     Tag = 'Tag',
     Time = 'Time',
     Slider = 'Slider',
-    Custom = 'Custom'
+    Custom = 'Custom',
+    Group = 'Group',
 }
 
 export type ControlMetaByType<T extends ControlType> =
@@ -57,4 +60,5 @@ export type ControlMetaByType<T extends ControlType> =
     T extends ControlType.Tag ? TagControlMeta:
     T extends ControlType.Time ? TimeControlMeta:
     T extends ControlType.Slider ? SliderControlMeta:
+    T extends ControlType.Group ? GroupControlMeta:
     T extends ControlType.Custom ? CustomControlMeta : any

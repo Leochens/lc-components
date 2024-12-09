@@ -11,5 +11,5 @@ export const RadioControl = (props: RadioControlProps) => {
     const onChange = (e: RadioChangeEvent) => {
         props.onChange && props.onChange(e.target.value)
     }
-    return <Radio.Group {...props.control} value={props.value} onChange={onChange} />
+    return <Radio.Group style={{width: '100%'}} {...props.control} value={props.value} onChange={onChange} />
 }

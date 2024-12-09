@@ -30,6 +30,31 @@ export const Default: Story = {
     },
     meta: [
       {
+        name: '基础属性',
+        code: 'base_props',
+        type: ControlType.Group,
+        control: {},
+        children: [
+          {
+            name: '姓名',
+            code: 'name1',
+            type: ControlType.Text,
+            control: {
+            }
+          },
+          {
+            name: '滑动条',
+            code: 'slider1',
+            type: ControlType.Slider,
+            control: {
+              max: 100,
+              min: 0,
+              width: '200px'
+            }
+          },
+        ],
+      },
+      {
         name: '姓名',
         code: 'name',
         type: ControlType.Text,
@@ -133,7 +158,8 @@ export const Default: Story = {
       },
     ],
     styles: {
-      width: 500
+      width: 300,
+      backgroundColor: 'rgba(0,0,0,0.01)'
     },
     onChange: () => { },
     options: {}

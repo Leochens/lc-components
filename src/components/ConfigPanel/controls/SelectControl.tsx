@@ -12,5 +12,5 @@ export const SelectControl = (props: SelectControlProps) => {
     const onChange = (e: any) => {
         props.onChange && props.onChange(e)
     }
-    return <Select {...props.control} value={props.value} onChange={onChange} />
+    return <Select style={{width: '100%'}} {...props.control} value={props.value} onChange={onChange} />
 }

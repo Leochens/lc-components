@@ -11,5 +11,5 @@ export const DateControl = (props: DateControlProps) => {
     const onChange = (date: any, dateString: string | string[]) => {
         props.onChange && props.onChange(date)
     }
-    return <DatePicker {...props.control} value={props.value} onChange={onChange} />
+    return <DatePicker style={{width: '100%'}} {...props.control} value={props.value} onChange={onChange} />
 }
