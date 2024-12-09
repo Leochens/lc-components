@@ -9,6 +9,7 @@ export * from  './NumberControl';
 export * from  './TagControl';
 export * from  './TimeControl';
 export * from  './SliderControl';
+export * from  './ImageControl';
 export * from  './CustomControl';
 export * from  './GroupControl';
 export * from  './TabsControl';

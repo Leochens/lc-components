@@ -1,9 +1,11 @@
 import { CheckboxProps, ColorPickerProps, DatePickerProps, InputNumberProps, InputProps, RadioProps, SelectProps, SwitchProps, TagProps, TimePickerProps } from "antd";
 import { SliderBaseProps, SliderSingleProps } from "antd/es/slider";
 import { ConfigPanelMeta } from "../types";
+import { CSSProperties } from "react";
 
 export interface ControlMeta {
-    hideLabel: boolean
+    hideLabel: boolean;
+    readonly: boolean;
 }
 export interface GroupControlMeta extends ControlMeta {
 }
@@ -18,6 +20,41 @@ export interface TabsControlMeta extends ControlMeta {
 export interface CustomControlMeta extends ControlMeta {
 }
 export interface TextControlMeta extends ControlMeta, InputProps {
+}
+export interface ImageControlMeta extends ControlMeta {
+    /**
+     * 图片的的url
+     */
+    src: string;
+    /**
+     * 是否可以编辑图片
+     */
+    edit?: boolean; 
+    /**
+     * 上传配置 为空的话 默认本地图片
+     */
+    upload?: {
+        /**
+         *  图床上传地址
+         */
+        url: string;
+        /**
+         * 上传方法
+         */
+        method: 'GET' | 'POST';
+        /**
+         * 上传参数
+         */
+        params: any;
+        /**
+         * 编辑图片后 是否进行二次上传
+         */
+        editUpload: boolean;
+    };
+    /**
+     * 图片在面板中的展示样式
+     */
+    style?: CSSProperties
 }
 export interface SliderControlMeta extends ControlMeta, SliderSingleProps {
 }
@@ -54,6 +91,7 @@ export enum ControlType {
     Tag = 'Tag',
     Time = 'Time',
     Slider = 'Slider',
+    Image = 'Image',
     Custom = 'Custom',
     Group = 'Group',
     Tabs = 'Tabs',
@@ -71,6 +109,7 @@ export type ControlMetaByType<T extends ControlType> =
     T extends ControlType.Number ? NumberControlMeta:
     T extends ControlType.Tag ? TagControlMeta:
     T extends ControlType.Time ? TimeControlMeta:
+    T extends ControlType.Image ? ImageControlMeta:
     T extends ControlType.Slider ? SliderControlMeta:
     T extends ControlType.Group ? GroupControlMeta:
     T extends ControlType.Tabs ? TabsControlMeta:
