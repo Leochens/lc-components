@@ -22,9 +22,11 @@ export class ConfigPanelModel {
     }
 
     getMetas = () => {
-        return this.meta
+        return this.meta?.map(i => {
+            Object.assign(i,this.options.globalMetas);
+            return i;
+        })
     }
-
     getValue = (meta: ConfigPanelMeta) => {
         const { code } = meta;
         return this.data[code];

@@ -1,9 +1,19 @@
 import { CheckboxProps, ColorPickerProps, DatePickerProps, InputNumberProps, InputProps, RadioProps, SelectProps, SwitchProps, TagProps, TimePickerProps } from "antd";
 import { SliderBaseProps, SliderSingleProps } from "antd/es/slider";
+import { ConfigPanelMeta } from "../types";
 
 export interface ControlMeta {
+    hideLabel: boolean
 }
 export interface GroupControlMeta extends ControlMeta {
+}
+export interface TabsControlMeta extends ControlMeta {
+    defaultTab: string;
+    tabs: Array<{
+        name: string;
+        code: string;
+        children: Array<ConfigPanelMeta>
+    }>
 }
 export interface CustomControlMeta extends ControlMeta {
 }
@@ -46,6 +56,8 @@ export enum ControlType {
     Slider = 'Slider',
     Custom = 'Custom',
     Group = 'Group',
+    Tabs = 'Tabs',
+    Tab = 'Tab',
 }
 
 export type ControlMetaByType<T extends ControlType> =
@@ -61,4 +73,5 @@ export type ControlMetaByType<T extends ControlType> =
     T extends ControlType.Time ? TimeControlMeta:
     T extends ControlType.Slider ? SliderControlMeta:
     T extends ControlType.Group ? GroupControlMeta:
+    T extends ControlType.Tabs ? TabsControlMeta:
     T extends ControlType.Custom ? CustomControlMeta : any

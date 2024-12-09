@@ -11,3 +11,4 @@ export * from  './TimeControl';
 export * from  './SliderControl';
 export * from  './CustomControl';
 export * from  './GroupControl';
+export * from  './TabsControl';

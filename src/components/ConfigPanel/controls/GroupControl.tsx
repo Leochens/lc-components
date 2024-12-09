@@ -9,16 +9,12 @@ export interface GroupControlProps {
     // value: any
 }
 export const GroupControl = (props: GroupControlProps) => {
-    // const onChange = (date: any, dateString: string | string[]) => {
-    //     props.onChange && props.onChange(date)
-    // }
-
     const { meta, render } = props;
     const items = [{
         key: meta.code,
         label: meta.name,
-        children: meta.children?.map(meta => render(meta, { margin: '10px 0'})),
-        style: {margin: 0, padding: 0}
+        children: meta.children?.map(meta => render(meta, { margin: '10px 0' })),
+        style: { margin: 0, padding: 0 }
     }]
     return <Collapse
         bordered={false}

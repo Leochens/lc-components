@@ -21,7 +21,9 @@ export interface ConfigPanelMeta {
  * 配置面板的可选参数配置
  */
 export interface ConfigPanelOptions {
-
+    globalMetas?: {    
+        size?: 'large' | 'middle' | 'small'
+    }
 }
 
 /**
